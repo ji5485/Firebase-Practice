@@ -1,0 +1,255 @@
+body {background: #e9ecef;}
+#screen {
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  position: absolute;
+  left: 0;
+  opacity: 0.5;
+  z-index: 150;
+  display: none;
+}
+
+
+/* Calendar Style */
+
+.calendarWrapper {
+  margin-top: 35px;
+}
+
+.Calendar tbody tr td, .Calendar thead tr th {
+  width: 60px;
+  height: 45px;
+}
+
+.Calendar {
+  margin: 10px;
+  width: 45%;
+  background-color: white;
+  box-shadow: 1.3px 1.3px 3px #adb5bd;
+  z-index: 100;
+}
+
+.selector {
+  font-size: 1.5em;
+  cursor: pointer;
+  transition: .3s all
+}
+
+.selector:hover {
+  background-color: #d24999;
+  color: white;
+}
+
+.directive span a {
+  text-decoration: none;
+  color: black;
+}
+
+#TodayDate {
+  font-weight: bold;
+  font-size: 2.5rem;
+  text-align: center;
+  padding: 15px;
+  line-height: 5px;
+}
+
+.week th {text-align: center; font-size: 15px;}
+.Sun {color: deeppink; text-align: center;}
+.Mon, .Tue, .Wed, .Tur, .Fri {text-align: center;}
+.Sat {color: deepskyblue; text-align: center;}
+
+
+/* PlanArea Style */
+
+.planArea {
+  margin: 10px;
+  margin-top: 30px;
+  width: 45%;
+  height: 200px;
+  background-color: white;
+  box-shadow: 1.3px 1.3px 3px #adb5bd;
+  overflow-y: scroll;
+  z-index: 100;
+}
+
+.planModule {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  border-bottom: 1px solid #adb5bd;
+}
+
+.planModule div {
+  margin-left: 10px;
+  margin-top: 5px;
+  width: 60%;
+  float: left;
+  position: absolute;
+}
+
+.planModule button {
+  height: 50px;
+  width: 20%;
+  float: right;
+  background-color: white;
+  border: 0;
+  border-left: 1px solid #adb5bd;
+  border-bottom: 1px solid #adb5bd;
+  transition: .3s all;
+  outline: none;
+  font-weight: bold;
+  bottom: 0;
+}
+
+.planModule button:hover {
+  background-color: #d24999;
+  color: white;
+  border-left: 1px solid #d24999;
+}
+
+.upperBar {
+  text-align: center;
+  padding: 10px;
+  font-size: 1.5rem;
+  background-color: #d24999;
+  color: white;
+}
+
+
+/* Form Style */
+
+.calendarForm {
+  float: right;
+  width: 45%;
+  height: 600px;
+  margin-top: 35px;
+  background-color: white;
+  box-shadow: 1.3px 1.3px 3px #adb5bd;
+  z-index: 100;
+}
+
+.formInside {
+  margin: 20px;
+}
+
+.formInside p {
+  margin: 0;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.formInside p:nth-child(2) {
+  width: 45%;
+}
+
+.secondP {
+  float: right;
+  color: red;
+  width: 130px;
+}
+
+.formInside input, .formInside textarea, .formInside select {
+  border-radius: 5px;
+  border: 1.5px solid #868e96;
+  font-size: 15px;
+  width: 100%;
+  outline: none;
+  transition: .5s all;
+  background: white;
+}
+
+.formInside input, .formInside select {
+  height: 40px;
+  text-indent: 10px;
+}
+
+.formInside input:focus, .formInside textarea:focus, .formInside select:focus {
+  border: 1.5px solid #d24999;
+}
+
+.formButton {
+  width: 45%;
+  height: 40px;
+  color: black;
+  font-size: 2rem;
+  border-radius: 5px;
+  border: 1.5px solid #868e96;
+  background-color: white;
+  outline: none;
+  transition: .3s all
+}
+
+.formButton:hover {
+  border: 1.5px solid #d24999;
+  background-color: #d24999;
+  color: white;
+}
+
+.formButton:nth-child(2) {
+  float: right;
+  width: 45%;
+  font-size: 2rem;
+  text-indent: 0;
+}
+
+
+/* Popup Style */
+
+#popup {
+  top: 20%;
+  left: 10%;
+  width: 80%;
+  height: 400px;
+  background-color: white;
+  z-index: 200;
+  position: absolute;
+  display: none;
+  border-radius: 10px;
+  box-shadow: 5px 5px 5px #495057;
+}
+
+.information {
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+.popupInside {
+  margin: 30px;
+}
+
+.popupInside p {
+  font-size: 1.5rem;
+}
+
+.popupInside pre {
+  background-color: white;
+  overflow-y: scroll;
+  border: 0;
+  height: 80px;
+  margin: 0;
+  font-family: "HelveticaNeue";
+}
+
+.button {
+  width: 50%;
+  height: 50px;
+  background-color: #ff6b6b;
+  border-radius: 0px 0px 10px 0px;
+  bottom: 0;
+  right: 0;
+  display: inline;
+  position: absolute;
+  text-align: center;
+  font-size: 1.8rem;
+  font-weight: bolder;
+  line-height: 50px;
+  color: white;
+  cursor: pointer;
+}
+
+.button:nth-child(2) {
+  border-radius: 0px 0px 0px 10px;
+  background-color: #a9e34b;
+  left: 0;
+}

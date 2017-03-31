@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>수행평가 관리 홈페이지</title>
+  </head>
+
+  <script src="calendarCtrl.js"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheet.css">
+
+  <body>
+    <div class="container">
+      <div id="screen"></div>
+
+      <!-- Input Area -->
+      <div class="calendarForm">
+        <form>
+          <div class="formInside">
+            <p id="dateScript" class="secondP"></p>  <p>수행평가 시작 날짜</p>
+            <input type="text" placeholder="달력에서 날짜를 선택하세요." id="Date" readonly />
+          </div>
+          <div class="formInside">
+            <p>수행평가 기간</p>
+            <input type="text" placeholder="생략 가능  ex) 5일" value="" id="period" />
+          </div>
+          <div class="formInside">
+            <p id="nameScript" class="secondP"></p>  <p>수행평가 이름</p>
+            <input type="text" id="name" />
+          </div>
+          <div class="formInside">
+            <p id="subjectScript" class="secondP"></p>  <p>해당 과목</p>
+            <select id="subject">
+              <option value="" hidden>선택해주세요</option>
+              <option value="미적분">미적분</option>
+              <option value="영어">영어</option>
+              <option value="문학">문학</option>
+              <option value="자바 프로그래밍">자바 프로그래밍</option>
+              <option value="3D">3D</option>
+              <option value="화학">화학</option>
+              <option value="물리">물리</option>
+              <option value="체육">체육</option>
+              <option value="공업수학">공업수학</option>
+              <option value="중국어">중국어</option>
+            </select>
+          </div>
+          <div class="formInside">
+            <p id="discriptionScript" class="secondP"></p>  <p>수행평가 내용</p>
+            <textarea id="discription" cols="50" rows="7"></textarea>
+          </div>
+          <div class="formInside">
+            <button type="button" class="formButton" onclick="clearForm()">Clear</button>
+            <button type="button" class="formButton" onclick="submitForm()">Submit</button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Calendar -->
+      <div class="calendarWrapper">
+        <table class="Calendar" cellspacing="0">
+          <thead>
+            <tr>
+              <td colspan="7" id="TodayDate" class="directive"></td>
+            </tr>
+            <tr class="week">
+              <th class="Sun">Sun</th>
+              <th>Mon</th>
+              <th>Tue</th>
+              <th>Wed</th>
+              <th>Tur</th>
+              <th>Fri</th>
+              <th class="Sat">Sat</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="planArea">
+        <div class="upperBar">
+          <span id="monthYear"></span>
+          <span> 수행평가 일정</span>
+        </div>
+        <div id="monthPlan">
+        </div>
+      </div>
+
+      <div id="popup">
+        <div class="popupInside">
+          <span class="information">수행평가 정보</span>
+          <hr />
+          <p>수행평가 이름 : <span id="popupName"></span></p>
+          <p>수행평가 기간 : <span id="popupPeriod"></span></p>
+          <p>수행평가 과목 : <span id="popupSubject"></span></p>
+          <p>수행평가 시작 날짜 : <span id="popupDate"></span></p>
+          <p>수행평가 부가 정보<p>
+          <pre><span id="popupDiscription"></span></pre>
+        </div>
+        <div class="button" onclick="modify()">수정</div>
+        <div class="button" onclick="popupOff()">닫기</div>
+      </div>
+    </div>
+  </body>
+</html>
