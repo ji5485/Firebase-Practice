@@ -3,14 +3,19 @@
   <head>
     <meta charset="utf-8">
     <title>수행평가 관리 홈페이지</title>
-  </head>
 
-  <script src="calendarCtrl.js"></script>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-        integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
-        integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <link rel="stylesheet" href="stylesheet.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+            integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+            crossorigin="anonymous"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.6.2/firebase.js"></script>
+    <script src="firebaseFn.js"></script>
+    <script src="calendarCtrl.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css"
+          integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylesheet.css">
+  </head>
 
   <body>
     <div class="container">
@@ -97,10 +102,10 @@
           <p>수행평가 기간 : <span id="popupPeriod"></span></p>
           <p>수행평가 과목 : <span id="popupSubject"></span></p>
           <p>수행평가 시작 날짜 : <span id="popupDate"></span></p>
-          <p>수행평가 부가 정보<p>
+          <p style="margin-bottom: 0">수행평가 부가 정보<p>
           <pre><span id="popupDiscription"></span></pre>
         </div>
-        <div class="button" onclick="modify()">수정</div>
+        <div class="button" onclick="modify(this.id)">수정</div>
         <div class="button" onclick="popupOff()">닫기</div>
       </div>
     </div>
