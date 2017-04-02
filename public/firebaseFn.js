@@ -15,11 +15,11 @@ var dbGet = function(date) {
   var dataRef = database.ref(date + '/');
   $('.planModule').remove();
   dataRef.on('child_added', fnChildAdded);
+  dataRef.on('child_removed', fnChildRemoved);
   dataRef.on('child_changed', fnChildChanged);
 }
 
 var fnChildAdded = function(data) {
-  console.log(data);
   var key = data.key;
   var information = data.val();
   var name = information.name;
@@ -37,6 +37,12 @@ var fnChildAdded = function(data) {
                "</div>";
 
   $('#monthPlan').append(Module);
+}
+
+var fnChildRemoved = function(data) {
+  var key = data.key;
+
+  $('#monthPlan > #' + key).remove();
 }
 
 var fnChildChanged = function(data) {
